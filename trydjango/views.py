@@ -10,8 +10,11 @@ from articles.models import Article
 def home_view(request):
     name = "Chris"
     article = Article.objects.get(id=1)
+    article_list = Article.objects.all()
+    
     
     context = {
+        'article_list': article_list,
         'title': article.title,
         'id': article.id,
         'content': article.content
